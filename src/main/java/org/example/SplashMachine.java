@@ -2,7 +2,7 @@ package org.example;
 
 public class SplashMachine {
 
-    public Splash getSplash(String name){
+    public Splash getSplash (String name){
         switch (name){
             case "SmallSplash":
                 return new SmallSplash();
@@ -14,4 +14,15 @@ public class SplashMachine {
                 return null;
         }
     }
+
+    public Splash[] getSplashs(String name, int qty){
+        Splash[] products = new Splash[qty];
+        int i = 0;
+        while(i<qty){
+            products[i]=getSplash(name);
+            i++;
+        }
+        return products;
+    }
+
 }
